@@ -14,4 +14,4 @@ def compute_doubly_robust(X, y, z, p, train_fn, weights0=None, weights1=None):
     return (
         (y['y1'] - f1) * z / p + f1 \
         - (y['y0'] - f0) * (1-z) / (1-p) - f0
-    ).mean()
+    ).mean()   # 这里没有进行倾向性权重的稳定化
