@@ -38,7 +38,7 @@ def load_acic(year):
     z = data[binary_col].values
     if year == '17': z = acic_z
 
-    # Assuming the last column is the target column
+    # Assuming the last column is the target column  (以下操作是保留被观测到的潜在结果，未被观测到的潜在结果赋值为0)
     target_col = data.columns[-1]
     y = pd.DataFrame({
         'y1' : data[target_col].values * z,
